@@ -1,0 +1,48 @@
+Info about all items
+
+Hot Chocolate
+* Remove all effects
+* Restore 1 hunger
+* Item: Milk Bucket
+* To craft: Melt a cocoa bean
+
+Chocolate Cake
+* Adds a Regeneration 2 to 30 seconds
+* Restore all hunger
+* Item: Cake
+* Craft is:
+MCM
+WSW
+CFC,
+Which M is a Milk Bucket,
+C is a Cocoa Bean
+W is a Sugar
+S is a Egg
+F is a Wheat
+
+Milk Chocolate Bar
+* Adds a Speed 2 to 30 seconds
+* Restore 3 hunger
+* Item: Iron Ingot
+* Craft is:
+CAC
+WMW
+CAC,
+Which C is a Cocoa Bean
+A is a Nothing(Air)
+W is a Wheat
+M is a Milk Bucket
+
+Dark Chocolate Bar
+* Adds a Jump Boost 2 to 30 seconds
+* Restore 3 hunger
+* Item: Nether Brick
+* Craft is:
+CAC
+WCW
+CAC,
+Which C is a Cocoa Bean
+A is a Nothing(Air)
+W is a Wheat
+
+Thank you for reading this! Its my first plugin, please rate this!
