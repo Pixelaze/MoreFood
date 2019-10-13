@@ -1,0 +1,5 @@
+name: MoreFood
+version: ${project.version}
+main: ru.morefood.MoreFood
+authors: [_Vova2307_]
+description: Adds more food to Minecraft!
