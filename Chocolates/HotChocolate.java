@@ -9,22 +9,31 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
+import ru.morefood.MoreFood;
 
 public class HotChocolate implements Listener {
+
+    MoreFood mf;
+    public HotChocolate(MoreFood mf) {
+        this.mf = mf;
+    }
 
     @EventHandler
     public void use(PlayerInteractEvent e) {
         Player p = e.getPlayer(); //Находим игрока из события
         if(e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR) { //Если действие - правый клик
-            if (p.getInventory().getItemInMainHand().getType().equals(Material.MILK_BUCKET)) { //Если предмет равен ведру молока
-                ItemStack item = p.getInventory().getItemInMainHand();
-                if (item.getItemMeta().hasDisplayName() == true && item.getItemMeta().hasLore() == true) { //Если у предмета есть изменённое имя и лор
-                    if (item.getItemMeta().getLore().get(0).equals(ChatColor.GRAY + "Только что из печи! Наверное...")) { //Если лор равен "Только что из печи! Наверное..."
-                        if (item.getItemMeta().getDisplayName().equals(ChatColor.GRAY + "Горячий шоколад")) { //Если название равно "Горячий шоколад"
-                            e.setCancelled(true);
-                            removeItem(p);
-                            activate(p);
+            if(p.getInventory().getItemInMainHand() != null) {
+                if (p.getInventory().getItemInMainHand().getType().equals(Material.MILK_BUCKET)) { //Если предмет равен ведру молока
+                    ItemStack item = p.getInventory().getItemInMainHand();
+                    if(item.getItemMeta() != null) {
+                        if (item.getItemMeta().hasDisplayName() == true && item.getItemMeta().hasLore() == true) { //Если у предмета есть изменённое имя и лор
+                            if (item.getItemMeta().getLore().get(0).equals(ChatColor.GRAY + mf.getConfig().getString("Chocolates.Hot_Chocolate_Lore"))) { //Если лор равен "Только что из печи! Наверное..."
+                                if (item.getItemMeta().getDisplayName().equals(ChatColor.GRAY + mf.getConfig().getString("Chocolates.Hot_Chocolate"))) { //Если название равно "Горячий шоколад"
+                                    e.setCancelled(true);
+                                    removeItem(p);
+                                    activate(p);
+                                } else return;
+                            } else return;
                         } else return;
                     } else return;
                 } else return;
@@ -45,5 +54,4 @@ public class HotChocolate implements Listener {
             p.removePotionEffect(effect.getType()); //Удаляем эффекты зелий
         }
     }
-
 }
