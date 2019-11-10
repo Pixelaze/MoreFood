@@ -1,5 +1,5 @@
 # MoreFood
-//Its Russian-language version of this plugin. You also can use English version here: https://dev.bukkit.org/projects/more-food
+//You also can find this plugin here: https://dev.bukkit.org/projects/more-food
 
 Plugin for minecraft Bukkit 1.12.2, which adds more food!
 
